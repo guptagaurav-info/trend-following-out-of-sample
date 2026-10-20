@@ -1,0 +1,25 @@
+# All choices fixed before results were examined.
+raw_dir: data/raw
+out_dir: reports
+sma_months: 10          # Faber (2007)
+mom_months: 12          # Moskowitz, Ooi & Pedersen (2012)
+cost_bps: 5             # per unit of position change, ETF-level cost
+cost_bps_stress: 25     # cost stress test
+shiller_end: "2023-06-01"   # last month with dividends in the Shiller mirror
+publication_date: "2007-06-01"  # Faber's paper first circulated in 2006-07; test window starts here
+allocation_usd: 1000000000  # illustrative $1bn equity allocation
+sources:
+  shiller_sp500_monthly.csv:
+    url: https://raw.githubusercontent.com/datasets/s-and-p-500/main/data/data.csv
+    sha256: 3a45dffabc414afc298c12159abc84c2875f88175ff3d4473ef7417e725ecac6
+  prices.parquet:
+    url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_prices.parquet
+    sha256: 903dbb965979f8b92a60b01524372f42be0e4bf88c291caf87171a286149be32
+  stock_dividend_events.parquet:
+    url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_dividend_events.parquet
+    sha256: 08d2a37482501c79c108dd4fefe5f1cd8d64b19ef3d3a316753597c0ddd4ece8
+  daily_treasury_yield.parquet:
+    url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/daily_treasury_yield.parquet
+    sha256: 37fca5d22b8580efc93225213d0c4f6d7ef9cf5b183cf7a427cd22b274606171
+# Downloaded 2026-10-20. The mirrors update over time: a new download will have a new checksum,
+# and ingest.py stops so you consciously re-pin rather than silently changing the inputs.
