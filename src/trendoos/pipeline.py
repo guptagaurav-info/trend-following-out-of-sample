@@ -230,7 +230,9 @@ def _figures(cfg: Cfg, sh_bt: pd.DataFrame, bt: pd.DataFrame, yr: pd.DataFrame, 
         eq = (1 + sh_bt[col]).cumprod()
         ax.plot(t, (eq / eq.cummax() - 1) * 100, color=c, lw=1.1, label=lab)
     ax.set_title("Drawdown from previous peak, S&P 500 total return, 1872–2023 (Shiller monthly data)")
-    ax.set_ylabel("Drawdown (%)"); _years_axis(ax, 10); ax.set_xlim(t[0] - 1, t[-1] + 1); ax.legend(loc="lower left", frameon=False)
+    ax.set_ylabel("Drawdown (%)"); _years_axis(ax, 10); ax.set_xlim(t[0] - 1, t[-1] + 1)
+    ax.set_ylim(top=3); ax.axhline(0, color="#1A1A1F", lw=0.6)
+    ax.legend(loc="lower right", frameon=True, facecolor="white", edgecolor="#DDD9CE", framealpha=0.95)
     fig.tight_layout(); fig.savefig(fig_dir / "drawdowns_150y.png", dpi=160); plt.close(fig)
 
     # 2. The averaging illusion (SPY 1997+): Sharpe by price view
