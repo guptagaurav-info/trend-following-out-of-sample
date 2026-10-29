@@ -57,4 +57,4 @@ One asset. The long-history test uses averaged prices and assumes zero cash retu
 - Working, H. (1960). "Note on the correlation of first differences of averages in a random chain." *Econometrica*, 28(4), 916–918.
 - Data mirror: defeatbeta, *yahoo-finance-data* (Hugging Face, ODC-BY).
 
-All code, analysis and charts in this repository are the author's own. MIT licence.
+Code, analysis, charts and text were produced with AI assistance (Claude, by Anthropic) and reviewed by Gaurav Gupta. MIT licence.
